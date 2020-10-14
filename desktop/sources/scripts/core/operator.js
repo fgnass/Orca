@@ -19,7 +19,7 @@ function Operator (orca, x, y, glyph = '.', passive = false) {
     if (toValue) {
       const min = port.clamp && port.clamp.min ? port.clamp.min : 0
       const max = port.clamp && port.clamp.max ? port.clamp.max : 36
-      return clamp(orca.valueOf(glyph), min, max)
+      return clamp(orca.glyphValue(glyph), min, max)
     }
     return glyph
   }

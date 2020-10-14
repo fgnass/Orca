@@ -40,7 +40,7 @@ function Midi (client) {
     if (!this.outputDevice()) { console.warn('MIDI', 'No midi output!'); return }
 
     const transposed = this.transpose(item.note, item.octave)
-    const channel = !isNaN(item.channel) ? parseInt(item.channel) : client.orca.valueOf(item.channel)
+    const channel = !isNaN(item.channel) ? parseInt(item.channel) : client.orca.glyphValue(item.channel)
 
     if (!transposed) { return }
 

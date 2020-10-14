@@ -214,7 +214,7 @@ library.l = function OperatorL (orca, x, y, passive) {
   this.operation = function (force = false) {
     const a = this.listen(this.ports.a)
     const b = this.listen(this.ports.b)
-    return a !== '.' && b !== '.' ? orca.keyOf(Math.min(orca.valueOf(a), orca.valueOf(b))) : '.'
+    return a !== '.' && b !== '.' ? orca.keyOf(Math.min(orca.glyphValue(a), orca.glyphValue(b))) : '.'
   }
 }
 

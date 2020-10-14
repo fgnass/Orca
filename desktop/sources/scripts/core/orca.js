@@ -157,7 +157,7 @@ function Orca (library) {
     return uc === true ? this.keys[val % 36].toUpperCase() : this.keys[val % 36]
   }
 
-  this.valueOf = function (g) {
+  this.glyphValue = function (g) {
     return !g || g === '.' || g === '*' ? 0 : this.keys.indexOf(`${g}`.toLowerCase())
   }
 
@@ -178,7 +178,7 @@ function Orca (library) {
   }
 
   this.valueAt = function (x, y) {
-    return this.valueOf(this.glyphAt(x, y))
+    return this.glyphValue(this.glyphAt(x, y))
   }
 
   this.lockAt = function (x, y) {

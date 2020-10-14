@@ -33,7 +33,7 @@ function Osc (client) {
     if (!this.socket) { console.warn('OSC', 'Unavailable socket'); return }
     const oscMsg = new osc.Message(path)
     for (var i = 0; i < msg.length; i++) {
-      oscMsg.append(client.orca.valueOf(msg.charAt(i)))
+      oscMsg.append(client.orca.glyphValue(msg.charAt(i)))
     }
     this.socket.send(oscMsg, (err) => {
       if (err) { console.warn(err) }
